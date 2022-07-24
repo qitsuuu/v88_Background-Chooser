@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+       <title>Background Chooser by Qit</title>
+       <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Background Chooser by Qit</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://yarnpkg.com/en/package/normalize.css">
+       <script type="text/javascript" src="http://code.jquery.com/jquery-1.10.2.min.js"></script> 
+       <script type="text/javascript">
+        function resetImg(){
+            $('img').css('border', 'none');
+        }
+          $(document).ready(function(){
+             $('#main_box').click(function(){
+                resetImg();
+                $('#main_box').css('background-image', 'none')
+             })
+
+             $('.mini_boxes').click(function(){
+                event.stopPropagation();
+                resetImg();
+                var bgurl = $(this).attr('src');
+                $(this).css('border', '3px solid yellow');
+                $('#main_box').css('background-image', 'url('+bgurl+')')
+             })
+          });
+      </script>
+</head>
+<body>
+      <h1>Background Chooser</h1>
+      <div id="main_box">
+          <img src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-10.gif" class="mini_boxes">
+          <img src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-36.gif" class="mini_boxes">
+          <img src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-25.gif" class="mini_boxes">
+          <img src="http://twistedsifter.com/wp-content/uploads/2013/05/animated-gifs-of-fighting-game-backgrounds-50.gif" class="mini_boxes">
+      </div>
+</body>
+</html>
